@@ -65,3 +65,5 @@ CONSTRAINT PAG_FK_ALUN FOREIGN KEY (PAG_ALUNO) REFERENCES ALUNOS(ALUNO_MATRICULA
 
 -----------------------------------------------------------------------------------------------
 #DDL'S
+
+A
