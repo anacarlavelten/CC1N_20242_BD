@@ -219,3 +219,53 @@ RECURSOS_ID INT PRIMARY KEY,
 RH_QTD_EMP DECIMAL (10,0),
 RH_FOLHADEPAG DECIMAL(10,3)
 );
+
+-----------------------------------------------------------------------------------------------------
+#INSERT MÁQUINAS
+
+INSERT INTO MAQUINAS (MAQ_COD, MAQ_NOME, MAQ_TEMP_VIDA, MAQ_DATA_COMP, MAQ_DATA_FIM_GRT) 
+VALUES
+(24, 'AB58', '10 anos', '2015-06-10', '2025-06-10'),
+(56, 'AC41, '7 anos', '2017-03-15', '2024-03-15'),
+(41, 'PO90', '15 anos', '2010-11-20', '2025-11-20'),
+(84, 'LI55', '5 anos', '2020-01-01', '2025-01-01'),
+(63, 'MP57 E', '20 anos', '2005-08-25', '2025-08-25');
+
+#INSERT REGISTRO_MANUTENÇÃO
+
+INSERT INTO REGISTRO_MANUTENÇÃO (RM_COD, RM_DATA, RM_DESC, RM_MAQ)
+VALUES
+(250, '2024-09-15', 'Manutenção na parte mecânica', 24),
+(570, '2024-10-17', 'Manuetenção na ventilação', 56),
+(410, '2024-11-04', 'Manutenção de rotina', 41),
+(940, '2024-04-08', 'Manutenção de fios', 84),
+(750, '2024-06-04,, 'Manutenção de sistema', 63)
+
+#INSERT PRODUTOS
+
+INSERT INTO PRODUTOS (PROD_COD, PROD_NOME, PROD_DIMENSOES, PROD_COR, PROD_COR, TEM_FAB_PROD, PROD_EST)
+VALUES
+(123,)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
