@@ -220,7 +220,7 @@ CONSTRAINT TEL_FK_EMP FOREIGN KEY (TLEM_EMPREGADO) REFERENCES EMPREGADOS(EMP_MAT
 INSERT INTO MAQUINAS (MAQ_COD, MAQ_NOME, MAQ_TEMP_VIDA, MAQ_DATA_COMP, MAQ_DATA_FIM_GRT) 
 VALUES
 (24, 'AB58', '10 anos', '2015-06-10', '2025-06-10'),
-(56, 'AC41, '7 anos', '2017-03-15', '2024-03-15'),
+(56, 'AC41', '7 anos', '2017-03-15', '2024-03-15'),
 (41, 'PO90', '15 anos', '2010-11-20', '2025-11-20'),
 (84, 'LI55', '5 anos', '2020-01-01', '2025-01-01'),
 (63, 'MP57 E', '20 anos', '2005-08-25', '2025-08-25');
@@ -233,27 +233,7 @@ VALUES
 (570, '2024-10-17', 'Manuetenção na ventilação', 56),
 (410, '2024-11-04', 'Manutenção de rotina', 41),
 (940, '2024-04-08', 'Manutenção de fios', 84),
-(750, '2024-06-04,, 'Manutenção de sistema', 63)
-
-#INSERT PRODUTOS
-
-INSERT INTO MAQUINAS (MAQ_COD, MAQ_NOME, MAQ_TEMP_VIDA, MAQ_DATA_COMP, MAQ_DATA_FIM_GRT)
-VALUES
-(1, 'Prensa Hidráulica', '10 anos', '2015-06-15', '2025-06-15'),
-(2, 'Furadeira CNC', '8 anos', '2016-09-01', '2024-09-01'),
-(3, 'Moinho de Café', '5 anos', '2019-03-10', '2024-03-10'),
-(4, 'Serra de Corte', '12 anos', '2010-12-20', '2022-12-20'),
-(5, 'Misturador Industrial', '6 anos', '2018-08-14', '2024-08-14');
-
-#INSERT REGISTRO_MANUTENÇÃO
-
-INSERT INTO REGISTRO_MANUTENÇÃO (RM_COD, RM_DATA, RM_DESC, RM_MAQ)
-VALUES
-(1, '2024-10-10', 'Manutenção preventiva do motor', 1),
-(2, '2024-10-12', 'Troca de óleo e ajuste da lâmina', 2),
-(3, '2024-10-15', 'Ajuste de correias e calibração', 3),
-(4, '2024-10-20', 'Revisão geral e troca de peças', 4),
-(5, '2024-10-25', 'Limpeza e substituição de válvulas', 5);
+(750, '2024-06-04', 'Manutenção de sistema', 63)
 
 #INSERT PRODUTOS
 
