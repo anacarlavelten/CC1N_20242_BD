@@ -245,7 +245,8 @@ VALUES
 (4, 'Serra de Corte', '12 anos', '2010-12-20', '2022-12-20'),
 (5, 'Misturador Industrial', '6 anos', '2018-08-14', '2024-08-14');
 
--- Inserções na tabela REGISTRO_MANUTENÇÃO
+#INSERT REGISTRO_MANUTENÇÃO
+
 INSERT INTO REGISTRO_MANUTENÇÃO (RM_COD, RM_DATA, RM_DESC, RM_MAQ)
 VALUES
 (1, '2024-10-10', 'Manutenção preventiva do motor', 1),
@@ -254,7 +255,8 @@ VALUES
 (4, '2024-10-20', 'Revisão geral e troca de peças', 4),
 (5, '2024-10-25', 'Limpeza e substituição de válvulas', 5);
 
--- Inserções na tabela PRODUTOS
+#INSERT PRODUTOS
+
 INSERT INTO PRODUTOS (PROD_COD, PROD_NOME, PROD_DIMENSOES, PROD_COR, TEMP_FAB_PROD, PROD_EST)
 VALUES
 (1, 'Cadeira Escritório', '50x50x100 cm', 'Preto', '30 dias', 100),
@@ -263,7 +265,8 @@ VALUES
 (4, 'Cafeteira Industrial', '30x30x40 cm', 'Inox', '10 dias', 30),
 (5, 'Monitor 24" LED', '60x35x5 cm', 'Preto', '20 dias', 150);
 
--- Inserções na tabela TIPO_ENDEREÇO
+#INSERT TIPO_ENDEREÇO
+
 INSERT INTO TIPO_ENDEREÇO (TIEN_ID, TIEN_NOME)
 VALUES
 (1, 'Residencial'),
@@ -272,7 +275,8 @@ VALUES
 (4, 'Rural'),
 (5, 'Governamental');
 
--- Inserções na tabela MAQUINAS_PROD
+#INSERT MAQUINAS_PROD
+
 INSERT INTO MAQUINAS_PROD (MAQUINAS_COD, PRODUTOS_COD, TEMP_USO)
 VALUES
 (1, 1, '02:30:00'),
@@ -281,7 +285,8 @@ VALUES
 (3, 4, '03:30:00'),
 (5, 5, '01:00:00');
 
--- Inserções na tabela CARGOS
+#INSERT CARGOS
+
 INSERT INTO CARGOS (CARGO_ID, CARGO_NOME, CARGO_FUNÇÃO, CARGO_SALARIO)
 VALUES
 (1, 'Operador de Máquinas', 'Operar as máquinas da linha de produção', 2500.00),
@@ -290,7 +295,8 @@ VALUES
 (4, 'Analista Financeiro', 'Analisar e controlar o fluxo de caixa', 3500.00),
 (5, 'Assistente de Marketing', 'Auxiliar nas atividades de marketing', 2500.00);
 
--- Inserções na tabela TIPO_COMPONENTE
+#INSERT TIPO_COMPONENTE
+
 INSERT INTO TIPO_COMPONENTE (TICP_ID, TICP_NOME, TICP_QNT)
 VALUES
 (1, 'Parafuso', 500.00),
@@ -299,7 +305,8 @@ VALUES
 (4, 'Pneu', 200.00),
 (5, 'Motor Elétrico', 50.00);
 
--- Inserções na tabela ENDEREÇOS
+#INSERT ENDEREÇOS
+
 INSERT INTO ENDEREÇOS (END_ID, END_RUA, END_BAIRRO, END_NUMRUA, END_UF, END_CIDADE, END_PAIS, END_CEP, END_TIPO)
 VALUES
 (1, 'Rua das Palmeiras', 'Centro', '123', 'SP', 'São Paulo', 'Brasil', '01010-010', 2),
@@ -308,7 +315,8 @@ VALUES
 (4, 'Rua das Acácias', 'Zona Rural', '101', 'GO', 'Goiânia', 'Brasil', '74000-000', 4),
 (5, 'Rua 15', 'Centro', '202', 'BA', 'Salvador', 'Brasil', '40000-000', 2);
 
--- Inserções na tabela EMPRESAS
+#INSERT EMPRESAS
+
 INSERT INTO EMPRESAS (EMP_CNPJ, EMP_RAZAOSOCIAL, EMP_ATIVIDADE, EMP_NOME, EMP_CONTATO, EMP_ENDEREÇO)
 VALUES
 ('12.345.678/0001-90', 'Indústria de Móveis Ltda', 'Fabricação de móveis sob medida', 'Indústria Móveis', '11 4002-8922', 1),
@@ -317,7 +325,8 @@ VALUES
 ('45.678.901/0001-23', 'Auto Peças Ltda', 'Comércio de peças automotivas', 'Auto Peças', '51 4004-9292', 4),
 ('56.789.012/0001-34', 'Construtora Construi Ltda', 'Construção civil', 'Construtora Construi', '61 3202-9722', 5);
 
--- Inserções na tabela TELEFONE_EMP
+#INSERT TELEFONE_EMP
+
 INSERT INTO TELEFONE_EMP (TEL_COD, TEL_NUM, TEL_EMP)
 VALUES
 (1, '11 4002-8922', '12.345.678/0001-90'),
@@ -326,7 +335,8 @@ VALUES
 (4, '51 4004-9292', '45.678.901/0001-23'),
 (5, '61 3202-9722', '56.789.012/0001-34');
 
--- Inserções na tabela CLIENTES
+#INSERT CLIENTES
+
 INSERT INTO CLIENTES (CLI_ID, CLI_DATACAD, CLI_CONT, CLI_NOME, CLI_EMP)
 VALUES
 (1, '2024-05-01', '11 9999-9999', 'João Silva', '12.345.678/0001-90'),
@@ -335,7 +345,8 @@ VALUES
 (4, '2024-08-20', '51 6666-6666', 'Ana Costa', '45.678.901/0001-23'),
 (5, '2024-09-05', '61 5555-5555', 'Lucas Santos', '56.789.012/0001-34');
 
--- Inserções na tabela ENCOMENDAS
+#INSERT ENCOMENDAS
+
 INSERT INTO ENCOMENDAS (ENC_COD, ENC_DATA, ENC_CLI)
 VALUES
 (1, '2024-10-01', 1),
@@ -344,7 +355,8 @@ VALUES
 (4, '2024-10-15', 4),
 (5, '2024-10-20', 5);
 
--- Inserções na tabela PAGAMENTOS
+#INSERT PAGAMENTOS
+
 INSERT INTO PAGAMENTOS (PAG_ID, PAG_TOTAL, PAG_DESC, PAG_DATA, PAG_PARCELAS, PAG_ENC)
 VALUES
 (1, 5000.00, 500.00, '2024-10-01', 3, 1),
@@ -353,7 +365,8 @@ VALUES
 (4, 4500.00, 450.00, '2024-10-15', 3, 4),
 (5, 6000.00, 600.00, '2024-10-20', 2, 5);
 
--- Inserções na tabela ENDEREÇO_CLIENTE
+#INSERT ENDEREÇO_CLIENTE
+
 INSERT INTO ENDEREÇO_CLIENTE (ENDC_ID, ENDC_RUA, ENDC_BAIRRO, ENDC_NUMRUA, ENDC_UF, ENDC_CIDADE, ENDC_PAIS, ENDC_CEP, ENDC_TIPO, ENDC_CLI)
 VALUES
 (1, 'Rua das Palmeiras', 'Centro', '123', 'SP', 'São Paulo', 'Brasil', '01010-010', 2, 1),
@@ -361,6 +374,8 @@ VALUES
 (3, 'Rua 5', 'Parque Industrial', '789', 'MG', 'Belo Horizonte', 'Brasil', '30130-030', 3, 3),
 (4, 'Rua das Acácias', 'Zona Rural', '101', 'GO', 'Goiânia', 'Brasil', '74000-000', 4, 4),
 (5, 'Rua 15', 'Centro', '202', 'BA', 'Salvador', 'Brasil', '40000-000', 2, 5);
+
+#INSERT EMPREGADOS
 
 INSERT INTO EMPREGADOS (EMP_MATRICULA, EMP_NOME, EMP_CPF, EMP_ADIM, EMP_QUAL, EMP_CARGO, EMP_ENDEREÇO)
 VALUES
@@ -370,7 +385,8 @@ VALUES
 (104, 'Aline Ferreira', '456.789.012-33', '2020-12-05', 'Analista Financeiro', 4, 4),
 (105, 'Juliana Oliveira', '567.890.123-44', '2019-10-10', 'Assistente de Marketing', 5, 5);
 
--- Inserções na tabela PRODUTOS_ENCOMENDAS
+#INSERT PRODUTOS_ENCOMENDAS
+
 INSERT INTO PRODUTOS_ENCOMENDAS (PDEN_PROD_COD, PDEN_ENC_COD, PDEN_QUANT)
 VALUES
 (1, 1, 10.000),
@@ -379,7 +395,8 @@ VALUES
 (4, 4, 8.000),
 (5, 5, 15.000);
 
--- Inserções na tabela PRODUTOS_EMPREGADOS
+#INSERT PRODUTOS_EMPREGADOS
+
 INSERT INTO PRODUTOS_EMPREGADOS (EMPREGADO_COD, PRODUTO_ID, PREM_HORAS)
 VALUES
 (101, 1, '02:30:00'),
@@ -388,7 +405,8 @@ VALUES
 (104, 4, '02:00:00'),
 (105, 5, '01:30:00');
 
--- Inserções na tabela RECURSOS_ESPEC
+#INSERT RECURSOS_ESPEC
+
 INSERT INTO RECURSOS_ESPEC (REC_PROD, REC_QTS, REC_UND, REC_HORAS)
 VALUES
 (1, 100, 'Unidades', '02:00:00'),
@@ -397,7 +415,8 @@ VALUES
 (4, 50, 'Metros', '01:30:00'),
 (5, 80, 'Unidades', '02:30:00');
 
--- Inserções na tabela COMPONENTES
+#INSERT COMPONENTES
+
 INSERT INTO COMPONENTES (COMP_ID, COMP_NOME, COMP_UNIDADE, COMP_ESTOQUE, COMP_TIPO)
 VALUES
 (1, 'Parafuso A', 'Unidade', '1000', 1),
@@ -406,7 +425,8 @@ VALUES
 (4, 'Pneu C', 'Unidade', '150', 4),
 (5, 'Motor Elétrico', 'Unidade', '50', 5);
 
--- Inserções na tabela PRODUTOS_COMPONENTES
+#INSERT PRODUTOS_COMPONENTES
+
 INSERT INTO PRODUTOS_COMPONENTES (PRCOM_PRODUTOS, PRCOM_COMPONENTE)
 VALUES
 (1, 1),
@@ -415,7 +435,8 @@ VALUES
 (3, 4),
 (4, 5);
 
--- Inserções na tabela FORNECEDORES
+#INSERT FORNECEDORES
+
 INSERT INTO FORNECEDORES (FORN_ID, FORN_PESSO, FORN_NMR_CONT, FORN_EMP)
 VALUES
 (1, 'José da Silva', '11 9999-9999', '12.345.678/0001-90'),
@@ -424,7 +445,8 @@ VALUES
 (4, 'Fernanda Costa', '51 6666-6666', '45.678.901/0001-23'),
 (5, 'Luís Santos', '61 5555-5555', '56.789.012/0001-34');
 
--- Inserções na tabela COMPONENTES_FORNECEDORES
+#INSERT COMPONENTES_FORNECEDORES
+
 INSERT INTO COMPONENTES_FORNECEDORES (COMPFR_COD, FRCOD_CO, COFR_PREÇO)
 VALUES
 (1, 1, 1.50),
@@ -433,7 +455,8 @@ VALUES
 (4, 4, 10.00),
 (5, 5, 250.00);
 
--- Inserções na tabela REGISTRO_RESSUPRIMENTO
+#INSERT REGISTRO_RESSUPRIMENTO
+
 INSERT INTO REGISTRO_RESSUPRIMENTO (REG_COD, REG_DATA, REG_QNT_NECES, REG_COMP, REG_FORN)
 VALUES
 (1, '2024-10-01', 500.000, 1, 1),
@@ -442,7 +465,8 @@ VALUES
 (4, '2024-10-15', 50.000, 4, 4),
 (5, '2024-10-20', 300.000, 5, 5);
 
--- Inserções na tabela TELEFONE_EMPREGADO
+#INSERT TELEFONE_EMPREGADO
+
 INSERT INTO TELEFONE_EMPREGADO (TLEM_COD, TLEM_NUM, TLEM_EMPREGADO)
 VALUES
 (1, '11 4002-8922', 101),
@@ -451,7 +475,8 @@ VALUES
 (4, '51 4004-9292', 104),
 (5, '61 3202-9722', 105);
 
--- Inserções na tabela RECURSOS_RH
+#INSERT RECURSOS_RH
+
 INSERT INTO RECURSOS_RH (RECURSOS_ID, RH_QTD_EMP, RH_FOLHADEPAG)
 VALUES
 (1, 10, 25000.00),
