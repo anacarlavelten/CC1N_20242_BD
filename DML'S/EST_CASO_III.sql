@@ -215,7 +215,7 @@ CONSTRAINT TEL_FK_EMP FOREIGN KEY (TLEM_EMPREGADO) REFERENCES EMPREGADOS(EMP_MAT
 );
 
 -----------------------------------------------------------------------------------------------------
-#INSERT MÁQUINAS
+#INSERT MAQUINAS
 
 INSERT INTO MAQUINAS (MAQ_COD, MAQ_NOME, MAQ_TEMP_VIDA, MAQ_DATA_COMP, MAQ_DATA_FIM_GRT) 
 VALUES
@@ -233,235 +233,224 @@ VALUES
 (570, '2024-10-17', 'Manuetenção na ventilação', 56),
 (410, '2024-11-04', 'Manutenção de rotina', 41),
 (940, '2024-04-08', 'Manutenção de fios', 84),
-(750, '2024-06-04', 'Manutenção de sistema', 63)
+(750, '2024-06-04', 'Manutenção de sistema', 63);
 
 #INSERT PRODUTOS
 
 INSERT INTO PRODUTOS (PROD_COD, PROD_NOME, PROD_DIMENSOES, PROD_COR, TEMP_FAB_PROD, PROD_EST)
 VALUES
-(1, 'Cadeira Escritório', '50x50x100 cm', 'Preto', '30 dias', 100),
-(2, 'Mesa de Reunião', '150x70x75 cm', 'Madeira', '45 dias', 50),
-(3, 'Luminária LED', '20x20x30 cm', 'Branca', '15 dias', 200),
-(4, 'Cafeteira Industrial', '30x30x40 cm', 'Inox', '10 dias', 30),
-(5, 'Monitor 24" LED', '60x35x5 cm', 'Preto', '20 dias', 150);
+(15, 'Monitor', '80x05x50 cm', 'Preto', '30 dias', 100),
+(23, 'Teclado gamer', '15x04x30 cm', 'vermelho', '10 dias', 500),
+(36, 'Fio de led', '220x03x30 cm', 'RGB', '5 dias', 2000),
+(49, 'Mousepad', '30x03x40 cm', 'Amwarelo', '10 dias', 300),
+(78, 'Caixa de som', '60x35x5 cm', 'cinza', '20 dias', 150);
 
 #INSERT TIPO_ENDEREÇO
 
 INSERT INTO TIPO_ENDEREÇO (TIEN_ID, TIEN_NOME)
 VALUES
-(1, 'Residencial'),
-(2, 'Comercial'),
-(3, 'Industrial'),
-(4, 'Rural'),
-(5, 'Governamental');
+(44, 'Residencial'),
+(68, 'Comercial'),
+(17, 'Industrial'),
+(67, 'Rural'),
+(26, 'Governamental');
 
 #INSERT MAQUINAS_PROD
 
 INSERT INTO MAQUINAS_PROD (MAQUINAS_COD, PRODUTOS_COD, TEMP_USO)
 VALUES
-(1, 1, '02:30:00'),
-(1, 2, '01:45:00'),
-(2, 3, '04:00:00'),
-(3, 4, '03:30:00'),
-(5, 5, '01:00:00');
+(24, 15, '02:30:00'),
+(56, 23, '01:45:00'),
+(41, 36, '04:00:00'),
+(84, 49, '03:30:00'),
+(63, 78, '01:00:00');
 
 #INSERT CARGOS
 
 INSERT INTO CARGOS (CARGO_ID, CARGO_NOME, CARGO_FUNÇÃO, CARGO_SALARIO)
 VALUES
-(1, 'Operador de Máquinas', 'Operar as máquinas da linha de produção', 2500.00),
-(2, 'Supervisor de Produção', 'Supervisionar a produção diária', 4000.00),
-(3, 'Gerente de Recursos Humanos', 'Gerenciar a área de RH', 6000.00),
-(4, 'Analista Financeiro', 'Analisar e controlar o fluxo de caixa', 3500.00),
-(5, 'Assistente de Marketing', 'Auxiliar nas atividades de marketing', 2500.00);
+(18, 'Analista de sistemas', 'testar os sistemas', 2500.00),
+(27, 'Supervisor de máquinas', 'Supervisionar a produção diária', 6000.00),
+(33, 'Gerente de vendas', 'Gerenciar a área de vendas', 4000.00),
+(46, 'Analista de RH', 'Auxiliar nas funções de recursos humanos', 3500.00),
+(59, 'Supervisor de Marketing', 'Supervisionar as atividades de marketing', 5500.00);
 
 #INSERT TIPO_COMPONENTE
 
 INSERT INTO TIPO_COMPONENTE (TICP_ID, TICP_NOME, TICP_QNT)
 VALUES
-(1, 'Parafuso', 500.00),
-(2, 'Porca', 300.00),
-(3, 'Placa de Circuito', 100.00),
-(4, 'Pneu', 200.00),
-(5, 'Motor Elétrico', 50.00);
+(18, 'Elétrico', 500.00),
+(63, 'Mecânico', 300.00),
+(17, 'Mecânico', 100.00),
+(38, 'Mecânico', 200.00),
+(59, 'Elétrico', 500.00);
 
 #INSERT ENDEREÇOS
 
 INSERT INTO ENDEREÇOS (END_ID, END_RUA, END_BAIRRO, END_NUMRUA, END_UF, END_CIDADE, END_PAIS, END_CEP, END_TIPO)
 VALUES
-(1, 'Rua das Palmeiras', 'Centro', '123', 'SP', 'São Paulo', 'Brasil', '01010-010', 2),
-(2, 'Av. Brasil', 'Vila Nova', '456', 'RJ', 'Rio de Janeiro', 'Brasil', '20220-020', 1),
-(3, 'Rua 5', 'Parque Industrial', '789', 'MG', 'Belo Horizonte', 'Brasil', '30130-030', 3),
-(4, 'Rua das Acácias', 'Zona Rural', '101', 'GO', 'Goiânia', 'Brasil', '74000-000', 4),
-(5, 'Rua 15', 'Centro', '202', 'BA', 'Salvador', 'Brasil', '40000-000', 2);
+(41, 'Rua das Flores', 'Vila Bethânia', '870', 'ES', 'Caraíva', 'Brasil', '29143-526', 68),
+(42, 'Av. Nossa senhora', 'Colina', '674', 'AM', 'Rio das ostras', 'Brasil', '39145-623', 44),
+(53, 'Rua Duas', 'São Geraldo', '789', 'MS', 'Horizonte', 'Brasil', '568963-004', 17),
+(34, 'Rua dos sapos', 'Rosa da Penha', '633', 'MT', 'São tomé das letras', 'Brasil', '524817-633', 67),
+(35, 'Rua limeira', 'Limoreiro', '125', 'BH', 'Cariacica', 'Brasil', '871452-410', 26);
 
 #INSERT EMPRESAS
 
 INSERT INTO EMPRESAS (EMP_CNPJ, EMP_RAZAOSOCIAL, EMP_ATIVIDADE, EMP_NOME, EMP_CONTATO, EMP_ENDEREÇO)
 VALUES
-('12.345.678/0001-90', 'Indústria de Móveis Ltda', 'Fabricação de móveis sob medida', 'Indústria Móveis', '11 4002-8922', 1),
-('23.456.789/0001-01', 'Tecnologia e Inovação S.A.', 'Desenvolvimento de software', 'Tech Innovations', '21 3002-9022', 2),
-('34.567.890/0001-12', 'Comércio de Alimentos', 'Comércio de alimentos', 'Comercial Alimentos', '31 3502-9122', 3),
-('45.678.901/0001-23', 'Auto Peças Ltda', 'Comércio de peças automotivas', 'Auto Peças', '51 4004-9292', 4),
-('56.789.012/0001-34', 'Construtora Construi Ltda', 'Construção civil', 'Construtora Construi', '61 3202-9722', 5);
+('64.574.678/0001-90', 'Indústria de Eltromecânica LTDA', 'Fabricação de materiais eletricos', 'eletrotec', 'eletrotec@gmail.com', 41),
+('99.257.789/0001-01', 'Viação do Transporte LTDA', 'Transporte de pessoas e animais', 'Águia Branca', 'aguianbranca@gmail.com', 42),
+('34.545.890/0001-12', 'Comércio de Grãos SA', 'Comércio de alimentos de grãos', 'Comercial Alimentos', 'alimentoscomercial@gmail.com', 53),
+('47.555.901/0001-23', 'Auto Socorro LTDA', 'Socorro mêcanico e guincho', 'Socorro do Zé', 'autosocorro@gmail.com', 34),
+('56.862.012/0001-34', 'Metal Mecâncina SA', 'Construção industrial', 'Imetame', 'imetame@gmail.com', 35);
 
 #INSERT TELEFONE_EMP
 
 INSERT INTO TELEFONE_EMP (TEL_COD, TEL_NUM, TEL_EMP)
 VALUES
-(1, '11 4002-8922', '12.345.678/0001-90'),
-(2, '21 3002-9022', '23.456.789/0001-01'),
-(3, '31 3502-9122', '34.567.890/0001-12'),
-(4, '51 4004-9292', '45.678.901/0001-23'),
-(5, '61 3202-9722', '56.789.012/0001-34');
+(74, '11 99852-8977', '64.574.678/0001-90'),
+(69, '31 98745-9045', '99.257.789/0001-01'),
+(12, '27 99802-9163', '34.545.890/0001-12'),
+(82, '51 4004-9292', '47.555.901/0001-23'),
+(46, '28 99345-9722', '56.862.012/0001-34');
 
 #INSERT CLIENTES
 
 INSERT INTO CLIENTES (CLI_ID, CLI_DATACAD, CLI_CONT, CLI_NOME, CLI_EMP)
 VALUES
-(1, '2024-05-01', '11 9999-9999', 'João Silva', '12.345.678/0001-90'),
-(2, '2024-06-15', '21 8888-8888', 'Maria Oliveira', '23.456.789/0001-01'),
-(3, '2024-07-10', '31 7777-7777', 'Carlos Pereira', '34.567.890/0001-12'),
-(4, '2024-08-20', '51 6666-6666', 'Ana Costa', '45.678.901/0001-23'),
-(5, '2024-09-05', '61 5555-5555', 'Lucas Santos', '56.789.012/0001-34');
+(21, '2024-05-01', '27 98741-2415', 'Luccas Lucco', '64.574.678/0001-90'),
+(84, '2024-06-16', '21 99543-6854', 'Anitta Duarte', '99.257.789/0001-01'),
+(37, '2023-11-12', '33 98257-3215', 'Henrique Silva', '34.545.890/0001-12'),
+(49, '2014-08-22', '28 99414-9872', 'Mateus Tedor', '47.555.901/0001-23'),
+(75, '2021-10-05', '31 99745-1452', 'Ludimilla Castro', '56.862.012/0001-34');
 
 #INSERT ENCOMENDAS
 
 INSERT INTO ENCOMENDAS (ENC_COD, ENC_DATA, ENC_CLI)
 VALUES
-(1, '2024-10-01', 1),
-(2, '2024-10-05', 2),
-(3, '2024-10-10', 3),
-(4, '2024-10-15', 4),
-(5, '2024-10-20', 5);
+(900, '2020-10-01', 21),
+(244, '2022-11-08', 84),
+(374, '2024-09-14', 37),
+(436, '2023-07-18', 49),
+(541, '2021-06-20', 75);
 
 #INSERT PAGAMENTOS
 
 INSERT INTO PAGAMENTOS (PAG_ID, PAG_TOTAL, PAG_DESC, PAG_DATA, PAG_PARCELAS, PAG_ENC)
 VALUES
-(1, 5000.00, 500.00, '2024-10-01', 3, 1),
-(2, 7000.00, 700.00, '2024-10-05', 2, 2),
-(3, 3000.00, 300.00, '2024-10-10', 1, 3),
-(4, 4500.00, 450.00, '2024-10-15', 3, 4),
-(5, 6000.00, 600.00, '2024-10-20', 2, 5);
+(145, 4725.00, 652.00, '2021-10-06', 6, 900),
+(272, 4528.00, 421.00, '2022-11-13', 8, 244),
+(395, 2584.00, 652.00, '2024-09-19', 36, 374),
+(442, 2647.00, 277.00, '2024-07-21', 7, 436),
+(568, 3418.00, 522.00, '2024-06-27', 15, 541);
 
 #INSERT ENDEREÇO_CLIENTE
 
 INSERT INTO ENDEREÇO_CLIENTE (ENDC_ID, ENDC_RUA, ENDC_BAIRRO, ENDC_NUMRUA, ENDC_UF, ENDC_CIDADE, ENDC_PAIS, ENDC_CEP, ENDC_TIPO, ENDC_CLI)
 VALUES
-(1, 'Rua das Palmeiras', 'Centro', '123', 'SP', 'São Paulo', 'Brasil', '01010-010', 2, 1),
-(2, 'Av. Brasil', 'Vila Nova', '456', 'RJ', 'Rio de Janeiro', 'Brasil', '20220-020', 1, 2),
-(3, 'Rua 5', 'Parque Industrial', '789', 'MG', 'Belo Horizonte', 'Brasil', '30130-030', 3, 3),
-(4, 'Rua das Acácias', 'Zona Rural', '101', 'GO', 'Goiânia', 'Brasil', '74000-000', 4, 4),
-(5, 'Rua 15', 'Centro', '202', 'BA', 'Salvador', 'Brasil', '40000-000', 2, 5);
+(5631, 'Rua das Flores', 'Cristovão', '59', 'BH', 'Cariacica', 'Brasil', '29145-364', 44, 21),
+(5412, 'Av. Cristovão Colombo', 'Vila de Novais', '956', 'MT', 'Vila Velha', 'Brasil', '29145-741', 68, 84),
+(5246, 'Rua das Tulipas', 'Parque Industrial', '745', 'ES', 'Vitória', 'Brasil', '29654-635', 17, 37),
+(2164, 'Rua dos Ipês', 'Damasco', '855', 'RJ', 'Serra', 'Brasil', '29875-002', 67, 49),
+(6125, 'Rua 25', 'Itapemirim', '642', 'AP', 'Cachoeiro', 'Brasil', '2914-556', 26, 75);
 
 #INSERT EMPREGADOS
 
 INSERT INTO EMPREGADOS (EMP_MATRICULA, EMP_NOME, EMP_CPF, EMP_ADIM, EMP_QUAL, EMP_CARGO, EMP_ENDEREÇO)
 VALUES
-(101, 'Carlos Almeida', '123.456.789-00', '2023-06-15', 'Operador de Máquinas', 1, 1),
-(102, 'Fernanda Souza', '234.567.890-11', '2022-11-01', 'Supervisor de Produção', 2, 2),
-(103, 'Roberto Costa', '345.678.901-22', '2021-08-20', 'Gerente de Recursos Humanos', 3, 3),
-(104, 'Aline Ferreira', '456.789.012-33', '2020-12-05', 'Analista Financeiro', 4, 4),
-(105, 'Juliana Oliveira', '567.890.123-44', '2019-10-10', 'Assistente de Marketing', 5, 5);
+(1051, 'Matue souza', '654.982.789-00', '2023-06-15', 'Operador', 18, 41),
+(1502, 'Wiu Porto', '652.564.890-25', '2022-11-01', 'Supervisor', 27, 42),
+(1703, 'Ariana Costa', '624.282.901-34', '2021-08-20', 'Gerente', 33, 53),
+(1054, 'Aline Ferreira', '642.789.012-99', '2020-12-05', 'Analista', 46, 34),
+(1095, 'Laissy Oliveira', '985.890.123-66', '2019-10-10', 'Assistente', 59, 35);
 
 #INSERT PRODUTOS_ENCOMENDAS
 
 INSERT INTO PRODUTOS_ENCOMENDAS (PDEN_PROD_COD, PDEN_ENC_COD, PDEN_QUANT)
 VALUES
-(1, 1, 10.000),
-(2, 2, 5.000),
-(3, 3, 20.000),
-(4, 4, 8.000),
-(5, 5, 15.000);
+(15, 900, 41.000),
+(23, 244, 67.000),
+(36, 374, 82.000),
+(49, 436, 64.000),
+(78, 541, 27.000);
 
 #INSERT PRODUTOS_EMPREGADOS
 
 INSERT INTO PRODUTOS_EMPREGADOS (EMPREGADO_COD, PRODUTO_ID, PREM_HORAS)
 VALUES
-(101, 1, '02:30:00'),
-(102, 2, '03:00:00'),
-(103, 3, '04:00:00'),
-(104, 4, '02:00:00'),
-(105, 5, '01:30:00');
+(1051, 15, '07:30:00'),
+(1502, 23, '06:40:00'),
+(1703, 36, '11:00:00'),
+(1054, 49, '04:20:00'),
+(1095, 78, '10:30:00');
 
 #INSERT RECURSOS_ESPEC
 
 INSERT INTO RECURSOS_ESPEC (REC_PROD, REC_QTS, REC_UND, REC_HORAS)
 VALUES
-(1, 100, 'Unidades', '02:00:00'),
-(2, 200, 'Kg', '03:00:00'),
-(3, 150, 'Litros', '04:00:00'),
-(4, 50, 'Metros', '01:30:00'),
-(5, 80, 'Unidades', '02:30:00');
+(15, 130, 'gramas', '02:30:00'),
+(23, 220, 'Kg', '03:20:00'),
+(36, 150, 'Metros', '04:40:00'),
+(49, 50, 'Metros', '01:40:00'),
+(78, 80, 'kg', '02:20:00');
 
 #INSERT COMPONENTES
 
 INSERT INTO COMPONENTES (COMP_ID, COMP_NOME, COMP_UNIDADE, COMP_ESTOQUE, COMP_TIPO)
 VALUES
-(1, 'Parafuso A', 'Unidade', '1000', 1),
-(2, 'Porca B', 'Unidade', '500', 2),
-(3, 'Placa de Circuito', 'Unidade', '200', 3),
-(4, 'Pneu C', 'Unidade', '150', 4),
-(5, 'Motor Elétrico', 'Unidade', '50', 5);
+(158, 'Led', '45', '1582', 18),
+(623, 'Parafuso', '92', '5424', 63),
+(167,'Fio de solda','21','64120',17 ),
+(383, 'Fio de solda', '24', '5212', 38),
+(595, 'Placa de vídeo', '50', '3251', 59);
 
 #INSERT PRODUTOS_COMPONENTES
 
 INSERT INTO PRODUTOS_COMPONENTES (PRCOM_PRODUTOS, PRCOM_COMPONENTE)
 VALUES
-(1, 1),
-(1, 2),
-(2, 3),
-(3, 4),
-(4, 5);
+(15, 158),
+(23, 623),
+(36, 167),
+(49, 383),
+(78, 595);
 
 #INSERT FORNECEDORES
 
 INSERT INTO FORNECEDORES (FORN_ID, FORN_PESSO, FORN_NMR_CONT, FORN_EMP)
 VALUES
-(1, 'José da Silva', '11 9999-9999', '12.345.678/0001-90'),
-(2, 'Maria Oliveira', '21 8888-8888', '23.456.789/0001-01'),
-(3, 'Carlos Pereira', '31 7777-7777', '34.567.890/0001-12'),
-(4, 'Fernanda Costa', '51 6666-6666', '45.678.901/0001-23'),
-(5, 'Luís Santos', '61 5555-5555', '56.789.012/0001-34');
+(978, 'Juliana Silva', '27 99685-8874', '64.574.678/0001-90'),
+(245, 'Katia Souza', '27 94758-5876', '99.257.789/0001-01'),
+(543, 'José Schinneder', '28 94172-6354', '34.545.890/0001-12'),
+(464, 'Caio Castro', '28 93512-2159', '47.555.901/0001-23'),
+(518, 'Fabiano Luise', '28 52418-9857', '56.862.012/0001-34');
 
 #INSERT COMPONENTES_FORNECEDORES
 
 INSERT INTO COMPONENTES_FORNECEDORES (COMPFR_COD, FRCOD_CO, COFR_PREÇO)
 VALUES
-(1, 1, 1.50),
-(2, 2, 0.80),
-(3, 3, 5.00),
-(4, 4, 10.00),
-(5, 5, 250.00);
+(158, 978, 100.50),
+(623, 245, 40.80),
+(167, 543, 5.00),
+(383, 464, 110.00),
+(595, 518, 363.00);
 
 #INSERT REGISTRO_RESSUPRIMENTO
 
 INSERT INTO REGISTRO_RESSUPRIMENTO (REG_COD, REG_DATA, REG_QNT_NECES, REG_COMP, REG_FORN)
 VALUES
-(1, '2024-10-01', 500.000, 1, 1),
-(2, '2024-10-05', 200.000, 2, 2),
-(3, '2024-10-10', 100.000, 3, 3),
-(4, '2024-10-15', 50.000, 4, 4),
-(5, '2024-10-20', 300.000, 5, 5);
+(643, '2024-09-18', 500.000, 158, 978),
+(426, '2024-11-07', 200.000, 623, 245),
+(398, '2024-04-13', 100.000, 167, 543),
+(328, '2024-11-12', 50.000, 383, 464),
+(453, '2024-02-20', 300.000, 595, 518);
 
 #INSERT TELEFONE_EMPREGADO
 
 INSERT INTO TELEFONE_EMPREGADO (TLEM_COD, TLEM_NUM, TLEM_EMPREGADO)
 VALUES
-(1, '11 4002-8922', 101),
-(2, '21 3002-9022', 102),
-(3, '31 3502-9122', 103),
-(4, '51 4004-9292', 104),
-(5, '61 3202-9722', 105);
-
-#INSERT RECURSOS_RH
-
-INSERT INTO RECURSOS_RH (RECURSOS_ID, RH_QTD_EMP, RH_FOLHADEPAG)
-VALUES
-(1, 10, 25000.00),
-(2, 15, 40000.00),
-(3, 12, 30000.00),
-(4, 8, 20000.00),
-(5, 20, 50000.00);
-
+(85, '27 99874-4612', 1051),
+(55, '27 98745-7643', 1502),
+(98, '27 98510-4178', 1703),
+(46, '28 98522-3652', 1054),
+(65, '28 99572-462', 1095);
