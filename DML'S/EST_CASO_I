@@ -103,3 +103,78 @@ ADD_CODPOSTAL VARCHAR(10) NOT NULL,
 ADD_TELEFONE VARCHAR(15) NOT NULL,
 ADD_CONTATO TEXT NOT NULL
 );
+
+
+---------------------------------------------------------------------------------------------------------------
+
+#INSERT FORNECEDORES
+
+INSERT INTO FORNECEDORES (FORN_COD, FORN_NOME, FORN_RUA, FORN_NUMRUA, FORN_BAIRRO, FORN_CIDADE, FORN_ESTADO, FORN_PAIS, FORN_CODPOSTAL, FORN_TELEFONE, FORN_CONTATO)
+VALUES
+(41, 'American', 'Rua flores', 740, 'Paulista', 'Cachoeiro', 'Goias', 'Brasil', '29.143-320', '27 99854-8745', 'Via e-mail'),
+(46, 'Chinese', 'Rua azul', 974, 'Galdino', 'Tulipa', 'Mato Grosso', 'Brasil', '29.147-642', '28 98753-8214', 'Via carta'),
+(25, 'Alemain', 'Rua Maria', 256, 'Terra', 'Bromelia','Rio de Janeiro', 'Brasil', '29.456-851', '21 95522-9852', 'Via Ligação'),
+(74, 'Portugues', 'Rua da mata', 512, 'Setiba', 'Orquidea', 'Amapá', 'Brasil', '29.145-685', '11 98555-8752', 'Via e-mail'),
+(89, 'Alemain', 'Rua de barro', 425, 'Vitória', 'Lirio', 'São Paulo', 'Brasil', '29.365-725', '65 98521-2541', 'Via carta');
+
+#UPDATE FORNECEDORES
+
+UPDATE FORNECEDORES
+SET FORN_COD = 28
+WHERE FORN_COD = 25;
+
+UPDATE FORNECEDORES
+SET FORN_NOME = 'Portugues'
+WHERE FORN_NOME = 'Portuguese';
+
+#DELETE FORNECEDORES
+
+DELETE FROM FORNECEDORES
+WHERE FORN_COD = 41;
+
+
+INSERT INTO FILIAIS (FIL_COD, FIL_NOME, FIL_RUA, FIL_NUMRUA, FIL_BAIRRO, FIL_CIDADE, FIL_ESTADO, FIL_PAIS, FIL_CODPOSTAL, FIL_CAPACIDADE)
+VALUES 
+(800, 'Filial Americana', 'Rua das rosas', 582, 'Rosa da Penha', 'Viana', 'SP', 'Brasil', '29.145-982', '200 pessoas'),
+(941, 'Filial Mexicana', 'Rua das ostras', 544, 'Castelo', 'Vila Velha', 'RJ', 'Brasil', '29.145-985', '355 pessoas'),
+(875, 'Filial Portuguesa', 'Rua dos patos', 455, 'Itapemirim', 'Vitoria', 'MT', 'Brasil', '28,415-985', '145 pessoas0'),
+(641, 'Filial Latina', 'Rua dos quadros', 874, 'Serrano', 'Serra', 'ES', 'Brasil', '29.145-872', '635 pessoas'),
+(654, 'Filial Brasileira', 'Rua dos gatos', 541, 'Sul', 'Vila Velha', 'ES', 'Brasil', '26.145-987', '1000 pessoas');
+
+#UPDATE FILIAIS
+
+UPDATE FILIAIS
+SET FIL_COD = 942
+WHERE FIL_COD = 941;
+
+UPDATE FILIAIS
+SET FIL_NOME = 'Filial Latino-americana'
+WHERE FIL_NOME = 'Filial latina';
+
+#DELETE FILIAIS
+
+DELETE FROM FILIAIS
+WHERE FIL_COD = 654;
+
+INSERT INTO PRODUTOS (PROD_COD, PROD_NOME, PROD_DESCRICAO, PROD_ESPECTEC, PROD_QUANT, PROD_PRECOUNIT, PROD_UNIDMEDIDA, PROD_ESTOQ_MIN)
+VALUES 
+(288, 'Grampeador', '1 grampeador', 'Grampeador vermelho', 100.541, 19.99, 'kg', 10.040),
+(655, 'Parafusadeira', '1 parafusadeira e 3 bicos', 'Parafusadeira amarela', 400.652, 20.66, 'kg', 15.058),
+(874, 'Martelo', '1 martelo cabo inox', 'Martelo azul', 820.000, 52.00, 'cm', 96.25),
+(987, 'Clips', '900 clips', 'Clipes coloridos', 820.850, 98.22, 'g', 84.64),
+(641, 'Papel', '100 folhas', 'Folhas chamex coloridas', 574.568, 85.04, 'unidade', 63.15);
+
+#UPDATE PRODUTOS
+
+UPDATE PRODUTOS
+SET PROD_COD = 875
+WHERE PROD_COD = 874;
+
+UPDATE PRODUTOS
+SET PROD_NOME = 'Clipes de papel'
+WHERE PROD_NOME = 'Clips';
+
+#DELETE PRODUTOS
+
+DELETE FROM PRODUTOS
+WHERE PROD_NOME = 'Papel';
