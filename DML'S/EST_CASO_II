@@ -56,12 +56,12 @@ CONSTRAINT VOO_FK_DESTINO FOREIGN KEY (VOO_AER_DESTINO) REFERENCES AEROPORTO(AER
 CONSTRAINT VOO_FK_AERO FOREIGN KEY (VOO_AERONAVE) REFERENCES AERONAVES(AERON_PREFIXO)
 );
 
-CREATE TABLE IF NOT EXISTS OPERAÇÃO_VOO(
-OPE_VOO_ID INT,
-OPE_FUNC_ID INT,
-PRIMARY KEY (OPE_VOO_ID,OPE_FUNC_ID),
-CONSTRAINT OPE_FK_VOO FOREIGN KEY(OPE_VOO_ID) REFERENCES VOO(VOO_ID),
-CONSTRAINT OPE_FK_FUNC FOREIGN KEY(OPE_FUNC_ID) REFERENCES FUNCIONÁRIOS(FUNC_ID)
+  CREATE TABLE IF NOT EXISTS OPERAÇÃO_VOO(
+  OPE_VOO_ID INT,
+  OPE_FUNC_ID INT,
+  PRIMARY KEY (OPE_VOO_ID,OPE_FUNC_ID),
+  CONSTRAINT OPE_FK_VOO FOREIGN KEY(OPE_VOO_ID) REFERENCES VOO(VOO_ID),
+  CONSTRAINT OPE_FK_FUNC FOREIGN KEY(OPE_FUNC_ID) REFERENCES FUNCIONÁRIOS(FUNC_ID)
 );
 
 CREATE TABLE IF NOT EXISTS RESERVAS (
@@ -77,3 +77,130 @@ FEED_PASS INT PRIMARY KEY,
 FEED_DESC TEXT,
 FEED_DATA DATETIME
 );
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO PASSAGEIROS (PASS_CPF, PASS_NOME, PASS_TELEFONE, PASS_RUA, PASS_BAIRRO, PASS_UF, PASS_CEP, PASS_NUMRUA, PASS_EMAIL)
+VALUES 
+('123.456.789-01', 'Ana Souza', '21-98765-4321', 'Avenida lourenço', 'Jardim Paulista', 'RJ', '29.441-003', '684', 'ana.souza@gmail.com'),
+('987.654.321-52', 'Thallis Silva', '27 98754-2744', 'Rua dos patos', 'Jardim Azul', 'ES', '29.152-574', '553', 'thallissilva@gmail.com'),
+('345.678.901-03', 'Gabriel Dias', '27 98542-9856', 'Rua dos lirios', 'Jardim Amarelo', 'MT', '29.142-975', 854, 'gabrieldias#gmail.com'),
+('654.321.987-04', 'Matue Santos', '28 85569-9852', 'Rua das bromelias', 'Jardim Vermelho', 'AM', '29.625-528', 455, 'matuesantos@gmai.com'),
+('876.543.210-05', 'Wiu Silva', '33 98758-9854', 'Rua das conchas', 'Jardim colorido', 'ES', '28.125.369', 752, 'wiusilva@gmail.com');
+
+#UPDATE PASSAGEIROS 
+
+UPDATE PASSAGEIROS
+SET PASS_NUMRUA = '682'
+WHERE PASS_NUMRUA = '684';
+
+UPDATE PASSAGEIROS
+SET PASS_NUMRUA = '451'
+WHERE PASS_NUMRUA = '455';
+
+#DELETE PASSAGEIROS
+
+DELETE FROM PASSAGEIROS
+WHERE PASS_NOME = 'Wiu Silva'
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+INSERT INTO AERONAVES (AERON_PREFIXO, AERON_MODELO, AERON_ANOFABRI, AERON_AUTONOMIA, AERON_CAPACIDADE, AERON_FABRICANTE)
+VALUES 
+(12345, 'Boeing 737', '2015-05-20', '5,000 km', 200, 'Boeing'),
+(67890, 'Airbus A320', '2018-08-15', '6,000 km', 180, 'Airbus'),
+(54321, 'Embraer E195', '2020-03-10', '3,000 km', 120, 'Embraer'),
+(11223, 'Boeing 777', '2010-11-22', '13,000 km', 350, 'Boeing'),
+(33445, 'Airbus A350', '2017-06-30', '15,000 km', 350, 'Airbus');
+
+#UPDATE AERONAVES
+
+UPDATE AERONAVES
+SET AERON_CAPACIDADE = 356
+WHERE AERON_CAPACIDADE = 350;
+
+UPDATE AERONAVES
+SET AERON_CAPACIDADE = 184
+WHERE AERON_CAPACIDADE = 184;
+
+#DELETE AERONAVES
+
+DELETE FROM AERONAVES
+WHERE AERON_CAPACIDADE = 120;
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO FUNCIONÁRIOS (FUNC_ID, FUNC_NOME, FUNC_DATANASC, FUNC_RUA, FUNC_BAIRRO, FUNC_UF, FUNC_CEP, FUNC_NUMRUA, FUNC_CPF, FUNC_FUNÇÃO)
+VALUES 
+(1874, 'Ana Silva', '1985-06-15', 'Rua das Flores', 'Centro', 'SP', '29.143-678', '100', '173.456.789-00', 'Gerente'),
+(2520, 'Carlos Castro', '1990-11-22', 'Av. Paulista', 'Bela Vista', 'SP', '28.147-432', '200', '234.567.890-11', 'Analista de TI'),
+(2453, 'Juliana Souza', '1993-02-10', 'Rua dos Três Irmãos', 'Vila Progresso', 'RJ', '29.471-890', '150', '345.287.901-22', 'Assistente Administrativo'),
+(4854, 'Roberto Santos', '1980-09-05', 'Rua das Acácias', 'Jardim das Flores', 'MG', '29.528-901', '120', '456.789.012-33', 'Coordenador de Vendas'),
+(2415, 'Fernanda Costa', '1988-03-18', 'Rua do Comércio', 'Centro', 'RJ', '29.789-012', '250', '567.890.123-44', 'Assistente de Marketing');
+
+#UPDATE FUNCIONÁRIOS
+
+UPDATE FUNCIONÁRIOS
+SET FUNC_ID = 2524
+WHERE FUNC_ID = 2453;
+
+UPDATE FUNCIONÁRIOS
+SET FUNC_ID = 5412
+WHERE FUNC_ID = 4854;
+
+#DELETE FUNCIONÁRIOS
+
+DELETE FROM FUNCIONÁRIOS
+WHERE FUNC_ID = 1874;
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO AEROPORTO (AEROP_CODIGO, AEROP_NOME, AEROP_CIDADE, AEROP_PAIS, AEROP_LATIUDE, AEROP_LONGITUDE)
+VALUES
+(11112, 'Aeroporto Internacional', 'São Paulo', 'Brasil', -253, -486),
+(25551, 'Aeroporto Nacional', 'Rio de Janeiro', 'Brasil', -202, -463),
+(31113, 'Aeroporto de Lisboa', 'Lisboa', 'Portugal', 338, -998),
+(49555, 'Aeroporto de Londres', 'Londres', 'Reino Unido', 551, -857),
+(55812, 'Aeroporto de Chicago', 'Chicago', 'Alemanha', 650, 358);
+
+#UPDATE AEROPORTO
+
+UPDATE AEROPORTO
+SET AEROP_CODIGO = 49515
+WHERE AEROP_CODIGO = 49555;
+
+UPDATE AEROPORTO
+SET AEROP_CODIGO = 55243
+WHERE AEROP_CODIGO = 55812;
+
+-
+#DELETE AEROPOTO
+
+DELETE FROM AEROPORTO
+WHERE AEROP_NOME = 'Aeroporto de Chicago';
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO VOO (VOO_ID, VOO_DATA, VOO_HORA, VOO_AER_ORIGEM, VOO_AER_DESTINO, VOO_AERONAVE)
+VALUES
+(100, '2024-12-01', '08:00:00', 11112, 25551, 12345),
+(200, '2024-12-08', '10:30:00', 25551, 11112, 67890),
+(300, '2025-12-16', '14:45:00', 55812, 31113, 54321),
+(400, '2023-12-18', '17:00:00', 31113, 49555, 11223),
+(500, '2026-12-05', '20:15:00', 49555, 31113, 33445);
+
+#UPDATE VOO
+
+UPDATE VOO
+SET VOO_ID = 524
+WHERE VOO_ID = 500;
+
+UPDATE VOO
+SET VOO_ID = 241
+WHERE VOO_ID = 200;
+
+#DELETE VOO
+
+DELETE VOO
+WHERE VOO_ID = 300;
