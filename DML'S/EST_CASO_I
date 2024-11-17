@@ -105,9 +105,7 @@ ADD_CONTATO TEXT NOT NULL
 );
 
 
----------------------------------------------------------------------------------------------------------------
-
-#INSERT FORNECEDORES
+---------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO FORNECEDORES (FORN_COD, FORN_NOME, FORN_RUA, FORN_NUMRUA, FORN_BAIRRO, FORN_CIDADE, FORN_ESTADO, FORN_PAIS, FORN_CODPOSTAL, FORN_TELEFONE, FORN_CONTATO)
 VALUES
@@ -132,6 +130,7 @@ WHERE FORN_NOME = 'Portuguese';
 DELETE FROM FORNECEDORES
 WHERE FORN_COD = 41;
 
+---------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO FILIAIS (FIL_COD, FIL_NOME, FIL_RUA, FIL_NUMRUA, FIL_BAIRRO, FIL_CIDADE, FIL_ESTADO, FIL_PAIS, FIL_CODPOSTAL, FIL_CAPACIDADE)
 VALUES 
@@ -156,6 +155,8 @@ WHERE FIL_NOME = 'Filial latina';
 DELETE FROM FILIAIS
 WHERE FIL_COD = 654;
 
+---------------------------------------------------------------------------------------------------------------------------------
+
 INSERT INTO PRODUTOS (PROD_COD, PROD_NOME, PROD_DESCRICAO, PROD_ESPECTEC, PROD_QUANT, PROD_PRECOUNIT, PROD_UNIDMEDIDA, PROD_ESTOQ_MIN)
 VALUES 
 (288, 'Grampeador', '1 grampeador', 'Grampeador vermelho', 100.541, 19.99, 'kg', 10.040),
@@ -178,3 +179,82 @@ WHERE PROD_NOME = 'Clips';
 
 DELETE FROM PRODUTOS
 WHERE PROD_NOME = 'Papel';
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO PEDIDOS (PED_COD, PED_DATA, PED_HORA, PED_PREVISAO, PED_STATUS, PED_FORNECEDOR)
+VALUES 
+(66, '2024-11-16', '14:35:00','2024-11-20', 'PENDENTE', 41),
+(91, '2024-07-19', '20:45:30','2024-09-20', 'CONCLUÍDO,', 46),
+(24, '2024-04-04', '15:47:00','2024-10-11', 'EM ESPERA', 25),
+(69, '2024-03-14', '18:41:00','2024-01-14','CONCLUÍDO', 74),
+(64, '2024-02-08', '08:20:00','2024-08-14','EM ESPERA', 89);
+
+#UPDATE PEDIDOS
+
+UPDATE PEDIDOS
+SET PED_COD = 70
+WHERE PED_COD = 69;
+
+UPDATE PEDIDOS
+SET PED_COD = 65
+WHERE PED_COD = 64;
+
+#DELETE PEDIDOS
+
+DELETE FROM PEDIDOS
+WHERE PED_COD = 24;
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO RECEBIMENTOS (REC_DATA, REC_HORA, REC_QUANT_PROD, REC_CONDICAO, REC_PEDIDOS)
+VALUES 
+('2024-11-17', '09:00:00', 110.000, 'Correto', 66),
+('2024-08-05', '08:52:30', 520.000, 'Incorreto', 91),
+('2024-09-14', '14:20:00', 854.114, 'Correto', 24),
+('2021-08-09', '17:40:20', 254.144, 'Incorreto', 69),
+('2023-04-09', '13:50:40', 527.558, 'Correto', 64);
+
+#UPDATE RECEBIMENTOS
+
+UPDATE RECEBIMENTOS
+SET REC_HORA = '09:30:00'
+WHERE REC_HORA = '09:00:00';
+
+UPDATE RECEBIMENTOS
+SET REC_QUANT_PROD = 520.410
+WHERE REC_QUANT_PROD = 520.000;
+
+#DELETE RECEBIMENTOS
+
+DELETE FROM RECEBIMENTOS
+WHERE REC_QUANT_PROD = 854.114;
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO PEDIDOS_PRODUTOS (PDPR_PEDIDOS, PDPR_PRODUTOS, PDPR_QUANT)
+VALUES 
+(66, 288, 502.00),
+(91, 655, 410.07),
+(24, 874, 710.00),
+(69, 987, 620.00),
+(64, 641, 524.04);
+
+#UPDATE PEDIDOS_PRODUTOS
+
+UPDATE PEDIDOS_PRODUTOS
+SET PDPR_QUANT = 624.00
+WHERE PDPR_QUANT = 620.00;
+
+UPDATE PEDIDOS_PRODUTOS
+SET PDPR_QUANT = 715.00
+WHERE PDPR_QUANT = 710.00;
+
+#DELETE PEDIDOS_PRODUTOS
+
+DELETE FROM PEDIDOS_PRODUTOS
+WHERE PDPR_QUANT = 524.04;
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
