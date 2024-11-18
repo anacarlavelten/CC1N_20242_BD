@@ -63,6 +63,8 @@ PAG_STATUS SET ("PAGO","PENDENTE"),
 CONSTRAINT PAG_FK_ALUN FOREIGN KEY (PAG_ALUNO) REFERENCES ALUNOS(ALUNO_MATRICULA)
 );
 
+-----------------------------------------------------------------------------------------------------------------------------------
+
 INSERT INTO ALUNOS (ALUNO_MATRICULA, ALUNO_CPF, ALUNO_NOME, ALUNO_DATANASC, ALUNO_RUA, ALUNO_NUMRUA, ALUNO_BAIRRO, ALUNO_CIDADE, ALUNO_ESTADO, ALUNO_PAIS)
 VALUES 
 (1822, '123.456.789-00', 'João Silva', '2000-05-15', 'Rua A', 123, 'Centro', 'São Paulo', 'SP', 'Brasil'),
@@ -82,7 +84,7 @@ WHERE ALUNO_MATRICULA = 2525;
 DELETE FROM ALUNOS
 WHERE ALUNO_MATRICULA = 2454;
 
-
+-----------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO MODALIDADES (MOD_ID, MOD_NOME, MOD_DESC)
 VALUES 
@@ -103,6 +105,8 @@ WHERE ALUNO_MATRICULA = 40;
 DELETE FROM MODALIDADES
 WHERE MOD_ID = 10;
 
+-----------------------------------------------------------------------------------------------------------------------------------
+
 INSERT INTO INSTRUTORES (INST_CPF, INST_NOME, INST_DATANASC, INST_MOD)
 VALUES 
 (19840603755, 'Renato Lima', '1985-03-12', 10),
@@ -122,6 +126,8 @@ WHERE INST_DATANASC = '1990-11-21';
 DELETE FROM INSTRUTORES
 WHERE INST_CPF = 19447503755;
 
+-----------------------------------------------------------------------------------------------------------------------------------
+
 INSERT INTO TREINAMENTOS (TRAL_ID, TRIS_ID, TR_DESCRIÇÃO)
 VALUES 
 (2525, 19840603755, 'Treinamento para iniciantes em Yoga focando em flexibilidade e relaxamento.'),
@@ -132,11 +138,16 @@ VALUES
 
 UPDATE TREINAMENTOS
 SET TR_DESCRIÇÃO = 'Aula de Zumba para emagrecimento e diversão com ritmo leve.'
-WHERE INST_DATANASC = 'Aula de Zumba para emagrecimento e diversão com ritmo intenso.';
+WHERE TR_DESCRIÇÃO = 'Aula de Zumba para emagrecimento e diversão com ritmo intenso.';
 
 UPDATE TREINAMENTOS
 SET TR_DESCRIÇÃO = 'Treinamento de luta para condicionamento físico e técnica de combate.'
-WHERE INST_DATANASC = 'Treinamento de boxe para condicionamento físico e técnica de combate.';
+WHERE TR_DESCRIÇÃO = 'Treinamento de boxe para condicionamento físico e técnica de combate.';
+
+DELETE FROM TREINAMENTOS 
+WHERE TR_DESCRIÇÃO = 'Pilates para melhorar a postura e fortalecer o core.';
+
+-----------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO HORARIOS (HORARIO_ID, HORARIO_DIA, HORARIO_HORA)
 VALUES 
@@ -157,6 +168,8 @@ WHERE HORARIO_ID = 44;
 DELETE FROM HORARIOS
 WHERE HORARIO_ID = 24;
 
+-----------------------------------------------------------------------------------------------------------------------------------
+
 INSERT INTO AULAS (AULA_ID, AULA_IST, AULA_ALUNO, AULA_HORARIO, AULA_CAPACIDADE)
 VALUES 
 (187, 19440603744, 2525, 57, 20),
@@ -175,6 +188,8 @@ WHERE AULA_CAPACIDADE = 30;
 
 DELETE FROM AULAS
 WHERE AULA_CAPACIDADE = 18;
+
+-----------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO PAGAMENTOS (PAG_ID, PAG_ALUNO, PAG_DIA, PAG_VALOR, PAG_STATUS)
 VALUES 
