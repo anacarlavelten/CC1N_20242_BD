@@ -62,6 +62,7 @@ FUNC_NOME VARCHAR(100),
 FUNC_DATANASC DATE
 );
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO CLIENTE (CLIENTE_CPF, CLIENTE_NOME, CLIENTE_DATANASC, CLIENTE_RUA, CLIENTE_NUMRUA, CLIENTE_BAIRRO, CLIENTE_CIDADE, CLIENTE_ESTADO, CLIENTE_PAIS)
 VALUES 
@@ -82,6 +83,7 @@ WHERE CLIENTE_CPF = 18754263440;
 DELETE FROM CLIENTE
 WHERE CLIENTE_NUMRUA = 556;
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO FORNECEDORES (FORN_ID, FORN_NOME, FORN_CONTATO)
 VALUES 
@@ -102,6 +104,7 @@ WHERE FORN_ID = 407;
 DELETE FROM FORNECEDORES
 WHERE FORN_NOME = 'Fashion fast;
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO PRODUTOS (PROD_ID, PROD_NOME, PROD_CATEGORIA, PROD_QUANTIDADE, PROD_STATUS)
 VALUES 
@@ -122,6 +125,7 @@ WHERE PROD_ID = 429;
 DELETE FROM PRODUTOS
 WHERE PROD_ID = 288;
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO FORNECEDOR_PRODUTOS (FORNEC, PRODUTO, FOPR_RELAÇÃO)
 VALUES
@@ -142,6 +146,8 @@ WHERE  FOPR_RELAÇÃO = 'SAZONAL';
 DELETE FROM FORNECEDOR_PRODUTOS
 WHERE  FOPR_RELAÇÃO = 'MENSAL';
 
+-----------------------------------------------------------------------------------------------------------------------------------
+
 INSERT INTO VENDAS (VENDA_ID, VENDA_CLI, VENDA_PROD, VENDA_DATA, VENDA_PAGAMENTO)
 VALUES 
 (177, 13265425897, 288, '2024-11-13', 'CRÉDITO'),
@@ -161,6 +167,7 @@ WHERE VENDAS_ID = 535;
 DELETE FROM VENDAS
 WHERE VENDA_ID = 177;
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO PAGAMENTOS (PAG_ID, PAG_DATA, PAG_CLI, PAG_VALOR, PAG_STATUS)
 VALUES 
@@ -181,6 +188,7 @@ WHERE PAG_ID = 454;
 DELETE FROM PAGAMENTOS
 WHERE PAG_ID = 211;
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO FUNCIONÁRIOS (FUNC_ID, FUNC_NOME, FUNC_DATANASC)
 VALUES 
@@ -193,7 +201,6 @@ VALUES
 UPDATE FUNCIONÁRIOS
 SET FUNC_ID = 652
 WHERE FUNC_ID = 428;
-
 
 UPDATE FUNCIONÁRIOS
 SET FUNC_ID = 974
